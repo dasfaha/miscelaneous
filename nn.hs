@@ -17,3 +17,8 @@ myLength (x:xs)     = 1 + myLength(xs)
 myReverse           :: [a] -> [a]
 myReverse [x]       = [x]
 myReverse (x:xs)    = myReverse xs ++ (x:[]) 
+
+--6
+isPalindrome            :: Eq a => [a] -> Bool
+isPalindrome (x:xs)     = all (True==) [fst pairs == snd pairs |  pairs <- zip (x:xs) (reverse (x:xs)) ]
+--isPalindrome (x:xs)     = length (x:xs) == 10
